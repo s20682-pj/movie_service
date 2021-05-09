@@ -1,4 +1,4 @@
-package pjatk.movieserive.zuzcibo.Movie.Model;
+package pjatk.movieservice.zuzcibo.Movie.Model;
 
 public class Movie {
     private Long id;

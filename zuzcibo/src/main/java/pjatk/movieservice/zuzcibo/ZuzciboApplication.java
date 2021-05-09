@@ -1,4 +1,4 @@
-package pjatk.movieserive.zuzcibo;
+package pjatk.movieservice.zuzcibo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

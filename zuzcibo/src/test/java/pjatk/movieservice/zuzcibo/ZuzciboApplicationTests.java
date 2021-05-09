@@ -1,4 +1,4 @@
-package pjatk.movieserive.zuzcibo;
+package pjatk.movieservice.zuzcibo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
