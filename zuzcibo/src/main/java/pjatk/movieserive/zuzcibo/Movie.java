@@ -3,13 +3,13 @@ package pjatk.movieserive.zuzcibo;
 public class Movie {
     private Long id;
     private String name;
-    private String category;
+    private Category category;
     private String year;
 
     public Movie() {
     }
 
-    public Movie(Long id, String name, String category, String year) {
+    public Movie(Long id, String name, Category category, String year) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -32,11 +32,11 @@ public class Movie {
         this.name = name;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
