@@ -1,7 +1,9 @@
-package pjatk.movieserive.zuzcibo;
+package pjatk.movieserive.zuzcibo.Movie.Controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pjatk.movieserive.zuzcibo.Movie.Model.Movie;
+import pjatk.movieserive.zuzcibo.Movie.Service.MovieService;
 
 import java.util.List;
 

@@ -1,9 +1,10 @@
-package pjatk.movieserive.zuzcibo;
+package pjatk.movieserive.zuzcibo.Movie.Service;
 
 import org.springframework.stereotype.Service;
+import pjatk.movieserive.zuzcibo.Movie.Model.Movie;
 
 import java.util.List;
-import static pjatk.movieserive.zuzcibo.Category.*;
+import static pjatk.movieserive.zuzcibo.Movie.Model.Category.*;
 
 @Service
 public class MovieService {
