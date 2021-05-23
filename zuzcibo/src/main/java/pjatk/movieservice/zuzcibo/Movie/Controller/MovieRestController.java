@@ -6,11 +6,12 @@ import pjatk.movieservice.zuzcibo.Movie.Model.Movie;
 import pjatk.movieservice.zuzcibo.Movie.Service.MovieService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/movies")
 public class MovieRestController {
-    private MovieService movieService;
+    final MovieService movieService;
 
     public MovieRestController(MovieService movieService) {
         this.movieService = movieService;
@@ -32,7 +33,7 @@ public class MovieRestController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Movie> editMovie(@PathVariable Long id, @RequestBody Movie movie){
+    public ResponseEntity<Movie> editMovie(@PathVariable Long id, @RequestBody Movie movie) throws Exception{
         return ResponseEntity.ok(movieService.editMovie(id,movie));
     }
 
