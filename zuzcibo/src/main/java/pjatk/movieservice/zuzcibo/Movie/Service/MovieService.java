@@ -16,35 +16,43 @@ public class MovieService {
         this.movieRepository = movieRepository;
     }
 
-    public Movie getMovieById(Long id){
+    public Movie findById(Long id) {
         return movieRepository.findById(id).orElseThrow(RuntimeException::new);
     }
 
-    public List<Movie> allMovies(){
+    public List<Movie> findAll() {
         return movieRepository.findAll();
     }
 
-    public Movie addMovie(Movie movie){
+    public Movie addMovie(Movie movie) {
         return movieRepository.save(movie);
     }
 
-    public void deleteMovie(Long id){
-        if (movieRepository.findById(id).isPresent()){
+    public void deleteMovieById(Long id) {
+        if (movieRepository.findById(id).isPresent()) {
             movieRepository.deleteById(id);
         }
     }
 
     public Movie editMovie(Long id, Movie editedMovie) throws Exception {
-        if(movieRepository.existsById(id)){
+        if (movieRepository.existsById(id)) {
             return movieRepository.save(editedMovie);
-        }else{
+        } else {
             throw new Exception("Movie not found");
         }
 
-
     }
 
+    public Movie changeAvailability(Long id) throws Exception  {
+        Optional<Movie> movie = movieRepository.findById(id);
+        if (movie.isPresent()) {
+            movie.get().setAvailable(true);
+            return movieRepository.save(movie.get());
+        } else {
+            throw new Exception("Movie not found");
+        }
 
+}
 //    public List<Movie> allMovies(){
 //        return List.of(new Movie(1L, "To", Category.Horror, "2017"));
 //    }

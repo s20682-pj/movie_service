@@ -11,15 +11,17 @@ public class Movie {
     @Enumerated(EnumType.STRING)
     private Category category;
     private String year;
+    private boolean isAvailable;
 
     public Movie() {
     }
 
-    public Movie(Long id, String name, Category category, String year) {
+    public Movie(Long id, String name, Category category, String year, boolean isAvailable) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.year = year;
+        this.isAvailable = isAvailable;
     }
 
     public Long getId() {
@@ -52,5 +54,13 @@ public class Movie {
 
     public void setYear(String year) {
         this.year = year;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 }

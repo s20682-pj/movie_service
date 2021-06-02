@@ -18,13 +18,13 @@ public class MovieRestController {
     }
 
     @GetMapping()
-    public ResponseEntity<List<Movie>> allMovies() {
-        return ResponseEntity.ok(movieService.allMovies());
+    public ResponseEntity<List<Movie>> findAll() {
+        return ResponseEntity.ok(movieService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Movie> getMovieById(@PathVariable Long id){
-        return ResponseEntity.ok(movieService.getMovieById(id));
+    public ResponseEntity<Movie> findById(@PathVariable Long id){
+        return ResponseEntity.ok(movieService.findById(id));
     }
 
     @PostMapping
@@ -38,8 +38,13 @@ public class MovieRestController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMovie(@PathVariable Long id){
-        movieService.deleteMovie(id);
+    public ResponseEntity<Void> deleteMovieById(@PathVariable Long id){
+        movieService.deleteMovieById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{id}/available")
+    public ResponseEntity<Movie> changeAvailability(@PathVariable Long id) throws Exception{
+        return ResponseEntity.ok(movieService.changeAvailability(id));
     }
 }
