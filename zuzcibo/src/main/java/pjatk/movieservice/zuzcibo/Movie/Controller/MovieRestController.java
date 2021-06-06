@@ -43,8 +43,13 @@ public class MovieRestController {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("/{id}/available")
-    public ResponseEntity<Movie> changeAvailability(@PathVariable Long id) throws Exception{
-        return ResponseEntity.ok(movieService.changeAvailability(id));
+    @PutMapping("/return/{id}")
+    public ResponseEntity<Movie> returnMovie(@PathVariable Long id) throws Exception{
+        return ResponseEntity.ok(movieService.returnMovie(id));
+    }
+
+    @PutMapping("/rent/{id}")
+    public ResponseEntity<Movie> rentMovie(@PathVariable Long id) throws Exception{
+        return ResponseEntity.ok(movieService.rentMovie(id));
     }
 }

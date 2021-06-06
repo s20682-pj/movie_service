@@ -43,7 +43,7 @@ public class MovieService {
 
     }
 
-    public Movie changeAvailability(Long id) throws Exception  {
+    public Movie returnMovie(Long id) throws Exception  {
         Optional<Movie> movie = movieRepository.findById(id);
         if (movie.isPresent()) {
             movie.get().setAvailable(true);
@@ -52,7 +52,18 @@ public class MovieService {
             throw new Exception("Movie not found");
         }
 
-}
+    }
+
+    public Movie rentMovie(Long id) throws Exception  {
+        Optional<Movie> movie = movieRepository.findById(id);
+        if (movie.isPresent()) {
+            movie.get().setAvailable(false);
+            return movieRepository.save(movie.get());
+        } else {
+            throw new Exception("Movie not found");
+        }
+
+    }
 //    public List<Movie> allMovies(){
 //        return List.of(new Movie(1L, "To", Category.Horror, "2017"));
 //    }

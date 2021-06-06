@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface MovieRepository extends JpaRepository<Movie, Long> {
 
-    @Override
+/*    @Override
     Optional<Movie> findById(Long aLong);
 
     @Override
@@ -18,6 +18,6 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
     <S extends Movie> S save(S s);
 
     @Override
-    void delete(Movie movie);
+    void delete(Movie movie);*/
 
 }
